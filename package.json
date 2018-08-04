@@ -1,0 +1,32 @@
+{
+  "name": "synchronizertokenpatterndemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "../src/view/index.html",
+  "scripts": {
+    "start": "node config/server.js",
+    "dev": "nodemon config/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EshanDias/SynchronizerTokenPatternDemo.git"
+  },
+  "keywords": [
+    "nodejs",
+    "Synchronizer",
+    "Tocken",
+    "Pattern"
+  ],
+  "author": "Eshan Dias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EshanDias/SynchronizerTokenPatternDemo/issues"
+  },
+  "homepage": "https://github.com/EshanDias/SynchronizerTokenPatternDemo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express.js": "^1.0.0",
+    "nodemon": "^1.18.3"
+  }
+}
