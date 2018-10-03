@@ -1,8 +1,38 @@
 <html>
-    <header>
-        <title>Home</title>
-    </header>
-    <body>
-        <h1>This is Home Page</h1>
-    </body>
+<header>
+    <title>Home</title>
+</header>
+
+<body onload="getToken()">
+    <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+    <h1>This is Home Page</h1>
+    <form action="/test" method="POST" id="testForm">
+        <input type="text" name="name" id="name" placeholder="Enter Your Name Here" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function getToken() {
+            fetch('/getToken', {
+                credentials: 'same-origin',
+                method: 'POST',
+                body: {},
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+                .then(function (data) {
+                    var form = document.getElementById("testForm");
+                    var input = document.createElement("input");
+                    input.type = "hidden";
+                    input.name = "_csrfTocken";
+                    input.value = data.csrfToken;
+                    form.appendChild(input);
+                })
+        }
+    </script>
+</body>
+
 </html>
